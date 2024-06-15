@@ -21,6 +21,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 sed -i 's/^plugins=(.*)$/\plugins=(\
     git\
     tmux\
+    colored-man-pages\
     zsh-autosuggestions\
     zsh-syntax-highlighting\
 )/' ~/.zshrc
