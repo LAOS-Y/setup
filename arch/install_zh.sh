@@ -15,10 +15,12 @@ echo "Trusting the key. See https://www.archlinuxcn.org/archlinux-cn-repo-and-mi
 sudo pacman-key --lsign-key "farseerfc@archlinux.org"
 sudo pacman -S --noconfirm archlinuxcn-keyring
 
+echo "Installing full Noto fonts"
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+
 echo "Installing Chinese fonts"
 sudo pacman -S --noconfirm adobe-source-han-sans-cn-fonts \
 adobe-source-han-serif-cn-fonts \
-noto-fonts-cjk \
 wqy-microhei \
 wqy-microhei-lite \
 wqy-bitmapfont \
