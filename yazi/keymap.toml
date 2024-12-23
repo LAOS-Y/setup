@@ -1,0 +1,8 @@
+[manager]
+prepend_keymap = [
+    { on = "l", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+    { on = "<Enter>", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+    { on = [ "c", "a" ], run = "plugin compress", desc = "Archive selected files" },
+    { on = "T", run = "plugin max-preview", desc = "Maximize or restore preview" },
+    { on = "m", run = "plugin relative-motions", desc = "Trigger a new relative motion" },
+]
