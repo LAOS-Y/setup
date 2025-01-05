@@ -51,7 +51,7 @@ ya pack -a llanosrocas/yaziline
 ya pack -a yazi-rs/plugins:full-border
 ya pack -a yazi-rs/plugins:max-preview
 ya pack -a dedukun/relative-motions
-# try mactag.yazi if you are using MacOS
+echo "You should try mactag.yazi if you are using MacOS."
 
 CONTENT='
 # For Yazi, provides the ability to change the current working directory when exiting Yazi
@@ -65,7 +65,7 @@ function y() {
 }
 '
 
-if ! grep -Fxq "$CONTENT" "$CONFIG_FILE"; then
+if ! grep -Fxq "function y() {" "$CONFIG_FILE"; then
     echo "$CONTENT" >> "$CONFIG_FILE"
     echo "The shell warper is added to $CONFIG_FILE"
 else
