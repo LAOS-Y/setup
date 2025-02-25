@@ -3,3 +3,8 @@ prepend_fetchers = [
     { id = "git", name = "*", run = "git" },
     { id = "git", name = "*/", run = "git" },
 ]
+
+[preview]
+max_width=2048
+# You may need to comment this line out if you are using yazi on a server to reduce latency.
+image_delay=0
