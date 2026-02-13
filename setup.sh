@@ -33,5 +33,11 @@ script_dir=$(dirname "$script_path")
 cp "$script_dir"/.gitconfig ~/
 cp "$script_dir"/.tmux.conf ~/
 
-echo "Switching to ZSH"
-zsh
+if [ -t 0 ]; then
+    echo "Terminal detected. Switching to ZSH..."
+    # 'exec' replaces the current script process with zsh
+    # '-l' ensures it starts as a login shell (reads profile configs)
+    exec zsh -l
+else
+    echo "No TTY detected (running in automation/pipe). Skipping interactive ZSH switch."
+fi
