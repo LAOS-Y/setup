@@ -4,6 +4,18 @@ set -e
 
 echo "zsh location: $(which zsh)"
 
+OMZ_DIR="$HOME/.oh-my-zsh"
+
+if [ -d "$OMZ_DIR" ]; then
+    # Create a unique backup name with a timestamp
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    BACKUP_DIR="${OMZ_DIR}.bak.${TIMESTAMP}"
+    
+    echo "Existing Oh-My-Zsh detected."
+    echo "Backing up '$OMZ_DIR' to '$BACKUP_DIR'..."
+    mv "$OMZ_DIR" "$BACKUP_DIR"
+fi
+
 echo "Installing oh-my-zsh"
 RUNZSH=no sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
 
