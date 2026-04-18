@@ -38,6 +38,9 @@ sed -i 's/^plugins=(.*)$/\plugins=(\
     zsh-syntax-highlighting\
 )/' ~/.zshrc
 
+echo "Adding ~/.local/bin to PATH"
+sed -i '/^# export MANPATH=/a export PATH="$HOME/.local/bin:$PATH"' ~/.zshrc
+
 echo "Copying config for git and tmux"
 script_path=$(readlink -f ${BASH_SOURCE[0]})
 script_dir=$(dirname "$script_path")
